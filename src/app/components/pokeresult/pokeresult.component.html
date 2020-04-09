@@ -2,28 +2,26 @@
 
     <select name="type" onchange="LLAMAR A LA FUNCION!!!!!!!(this.form)">
     <option selected>
-    <option value="id"> Buscar por ID </option>
-    <option value="Nombre"> Buscar por nombre </option>
-    <option value="habilidades"> Buscar por habilidades </option>
+    <option value="searchId"> Buscar por ID </option>
+    <option value="searchName"> Buscar por nombre </option>
+    <option value="searchSkills"> Buscar por habilidades </option>
     </select>
 </form>
 
- <!-- <input type="text" [(ngModel)]="name">
 
-<p> {{ name }} </p>
- -->
+<input type="text" [(ngModel)]="searchName">
+<button (click)="searchId()"> Buscar </button>
 
-<p> {{ datosok.id }} </p>
-<p> {{ datosok.name }} </p>
+
 <table>
     <thead>
         <td> ID </td>
         <td> Nombre </td>
     </thead>
     <tbody>
-        <tr *ngFor="let datosok of datosokList">
-            <td> {{datosok.id}} </td>
-            <td> {{datosok.name}} </td>
+        <tr ><!--*ngFor="let datosok of datosokList"-->
+            <td> {{datosokList.id}} </td>
+            <td> {{datosokList.name}} </td>
         </tr>
     </tbody>
 </table>

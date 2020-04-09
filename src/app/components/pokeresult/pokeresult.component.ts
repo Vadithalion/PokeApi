@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 
+
 const apiData = {
   url: 'https://pokeapi.co/api/v2/',
   type: 'pokemon',
-  id: '25'
+  id: '1'
 };
 
 const {url, type, id} = apiData;
+
 const apiUrl = `${url}${type}/${id}`;
 
 
@@ -19,6 +21,7 @@ export class PokeresultComponent implements OnInit {
 
   datosok: any = '';
   datosokList: any = { id, name };
+  searchName: any = '';
 
   constructor() { }
 
@@ -29,7 +32,7 @@ export class PokeresultComponent implements OnInit {
     .then( (datos) => datos.json())
     .then( (pokemon) => generateJson(pokemon));
 
-    const generateJson = (datos) =>{
+    const generateJson = (datos) => {
       console.log(datos);
       this.datosok = datos;
 
@@ -39,5 +42,8 @@ export class PokeresultComponent implements OnInit {
       console.log(this.datosok);
       console.log(this.datosokList);
     };
-  }
+  } /*
+  searchId(( set.apiData ) => {
+    apiData.id = this.searchId;
+  });*/
 }
